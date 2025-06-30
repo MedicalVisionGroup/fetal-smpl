@@ -38,11 +38,12 @@ pip install git+https://github.com/jonbarron/robust_loss_pytorch
 pip install aitviewer
 ```
 
-The most triky part is to install `pytorch3d` with the correct CUDA version. The following commands should work on most systems. If you encounter issues, please refer to the [pytorch3d installation guide](https://pytorch3d.org/docs/installation). Newer python may not be compatible with `pytorch3d`, so we recommend using `Python 3.9`.
+The most triky part is to install `pytorch3d`. 
+If you encounter issues, please refer to the [pytorch3d installation guide](https://pytorch3d.org/docs/installation). 
+Newer python may not be compatible with `pytorch3d`, so we recommend using `Python 3.9`.
 
 To use `smplx` package, please download the SMPL-X model files: [model loading](https://github.com/vchoutas/smplx#model-loading).
-
-After downloading the model files, model directory may look like this:
+After downloading the files, model directory may look like this:
 ```
 models
 ├── smil_pose_prior_converted_mean.npy
@@ -62,14 +63,16 @@ We align both infant/fetal SMPL model to this example time series in following s
 
 ### Align model to segmentation and keypoints
 
+Change PYTHONPATH and EXP_DIR to your working directory
 ```bash 
-# change PYTHONPATH and EXP_DIR to your working directory
 export PYTHONPATH=/data/vision/polina/scratch/liuyingcheng/code/fetal_pose/fetal-smpl:$PYTHONPATH
-FOLD="open_source"
-EXP_DIR="/data/vision/polina/scratch/liuyingcheng/code/fetal_pose/fetal-smpl/results/${FOLD}"
-FOLDER_NAME="visualization"
+export FOLD="open_source"
+export EXP_DIR="/data/vision/polina/scratch/liuyingcheng/code/fetal_pose/fetal-smpl/results/${FOLD}"
+export FOLDER_NAME="visualization"
+```
 
-# this aligns infant SMPL (SMIL) model to example segmentation and keypoints
+This aligns infant SMPL (SMIL) model to example segmentation and keypoints
+```bash 
 python scripts/fetal_smpl_align.py \
   --exp-dir "${EXP_DIR}" \
   --data-split "${FOLD}" \
@@ -77,8 +80,10 @@ python scripts/fetal_smpl_align.py \
   --step-idx 0 \
   --num-beta 10 \
   --runner local
+```
 
-# this aligns fetal SMPL model to example segmentation and keypoints
+This aligns fetal SMPL model to example segmentation and keypoints
+```bash 
 python scripts/fetal_smpl_align.py \
   --exp-dir "${EXP_DIR}" \
   --data-split "${FOLD}" \
@@ -137,11 +142,9 @@ python scripts/visualization/align_subj_spec_shape_optim_his.py \
 To run the above steps using infant SMPL model, change `model_1` to `model_0` in the command line arguments. 
 And remove `--fetal_smpl_data_dict_path` argument.
 
-## TODOs
+## License
 
-- [x] Add alignment code. 
-- [x] Add visualization code. 
-- [x] Add environment setup, installation, usage, and citation/acknowledgements.
+This project is licensed under the MIT License.
 
 ## Contact
 
