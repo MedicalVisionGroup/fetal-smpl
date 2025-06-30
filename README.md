@@ -104,6 +104,7 @@ python scripts/visualization/init_align_smil_to_posed_optim_his.py \
 --frame_idx_list 0,10,20,30 \
 --fetal_smpl_data_dict_path ./results/open_source/training/model/step_1.npy
 ```
+https://github.com/user-attachments/assets/61e097cc-766c-40a3-a8e5-8d030fc45ea2
 
 **Animate aligned model.**
 ```bash
@@ -113,6 +114,7 @@ python scripts/visualization/init_align_smil_to_posed_seq.py \
 --num_betas 10 \
 --fetal_smpl_data_dict_path ./results/open_source/training/model/step_1.npy
 ```
+https://github.com/user-attachments/assets/af4c0880-b5db-4f4c-9d59-2463d361601a
 
 **Visualize aligning model to unposed segmentation (canonical shape estimation).**
 ```bash
@@ -121,6 +123,7 @@ python scripts/visualization/init_smil_beta_from_unposed_history.py \
 --subj_name MAP-C507 \
 --fetal_smpl_data_dict_path ./results/open_source/training/model/step_1.npy
 ```
+https://github.com/user-attachments/assets/5b415b52-d49e-4bcb-a363-235d58b15b2f
 
 **Align canonical shape to segmentation and keypoints.**
 ```bash
@@ -128,6 +131,7 @@ python scripts/visualization/align_subj_spec_shape_seq.py \
 --exp_dir ./results/open_source/evaluation/model_1/num_betas_10/visualization  \
 --step_idx 1 
 ```
+https://github.com/user-attachments/assets/8723d557-e968-402e-926f-466654869e4b
 
 **Animate aligned canonical shape.**
 ```bash
@@ -138,6 +142,7 @@ python scripts/visualization/align_subj_spec_shape_optim_his.py \
 --step_idx 1 \
 --frame_idx_list 0,4,8,12  
 ```
+https://github.com/user-attachments/assets/57c4f669-dae7-4a24-8624-3264eeb8a9e9
 
 To run the above steps using infant SMPL model, change `model_1` to `model_0` in the command line arguments. 
 And remove `--fetal_smpl_data_dict_path` argument.
