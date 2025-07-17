@@ -9,8 +9,8 @@
 Yingcheng Liu,
 Peiqi Wang,
 Sebastian Diaz,
-Benjamin Billot,
 Esra Abaci Turk,
+Benjamin Billot,
 Ellen Grant,
 Polina Golland
 <br />
@@ -131,7 +131,7 @@ python scripts/visualization/align_subj_spec_shape_seq.py \
 --exp_dir ./results/open_source/evaluation/model_1/num_betas_10/visualization  \
 --step_idx 1 
 ```
-https://github.com/user-attachments/assets/5b415b52-d49e-4bcb-a363-235d58b15b2f
+https://github.com/user-attachments/assets/af4c0880-b5db-4f4c-9d59-2463d361601a
 
 **Animate aligned canonical shape.**
 ```bash
@@ -142,7 +142,7 @@ python scripts/visualization/align_subj_spec_shape_optim_his.py \
 --step_idx 1 \
 --frame_idx_list 0,4,8,12  
 ```
-https://github.com/user-attachments/assets/af4c0880-b5db-4f4c-9d59-2463d361601a
+https://github.com/user-attachments/assets/5b415b52-d49e-4bcb-a363-235d58b15b2f
 
 To run the above steps using infant SMPL model, change `model_1` to `model_0` in the command line arguments. 
 And remove `--fetal_smpl_data_dict_path` argument.
